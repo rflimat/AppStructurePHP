@@ -1,0 +1,454 @@
+@font-face {
+    font-family: Montserrat;
+    src: url(../fonts/Montserrat/static/Montserrat-Medium.ttf);
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background: black;
+    font-family: Montserrat;
+    color: white;
+}
+
+/*Estilos header*/
+header {
+    display: flex;
+    width: 100%;
+    height: 70px;
+}
+
+#logo {
+    flex-basis: 60%;
+    align-items: center;
+    justify-content: flex-start;
+    line-height: 70px;
+}
+
+#logo a {
+    margin-left: 50px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+}
+
+.checkbtn {
+    display: none;
+    float: right;
+    margin-right: 40px;
+    font-size: 30px;
+    color: white;
+    line-height: 70px;
+    cursor: pointer;
+}
+
+#check {
+    display: none;
+}
+
+nav {
+    background-color: black;
+}
+
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+}
+
+nav ul li {
+    width: 120px;
+    text-align: center;
+    line-height: 70px;
+}
+
+nav ul li:hover {
+    background-color: #202020;
+    cursor: pointer;
+}
+
+nav ul li a {
+    width: 80px;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+/*Estilos login*/
+main {
+    background-color: #101010;
+}
+
+.container {
+    padding: 30px 50px;
+}
+
+/*Estilos index*/
+h1,
+h2 {
+    display: block;
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+p {
+    display: block;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#items ul {
+    display: grid;
+    margin: 40px 0px;
+    list-style: none;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 30px;
+}
+
+#items ul li {
+    background-color: black;
+    display: block;
+    height: 120px;
+    text-align: center;
+    font-size: 28px;
+}
+
+#items ul li span {
+    display: block;
+    margin-top: 40px;
+}
+
+/*Estilos form*/
+form {
+    display: contents;
+}
+
+.form {
+    margin: 0px;
+    padding: 10px;
+    padding: 30px 40px;
+    background-color: black;
+    color: white;
+}
+
+label,
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="password"],
+input[type="file"],
+select,
+textarea {
+    width: 95%;
+    margin: 10px 0px;
+}
+
+label {
+    display: block;
+    font-size: 24px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="password"],
+select,
+textarea {
+    font-family: 'Montserrat';
+    font-size: 20px;
+    padding: 10px;
+}
+
+input[type="file"] {
+    font-family: 'Montserrat';
+    font-size: 20px;
+    padding: 10px 0px;
+}
+
+textarea {
+    font-family: 'Montserrat';
+    height: 60px;
+    resize: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+}
+
+/*Estilos boton*/
+.btn-click {
+    display: block;
+    margin: 20px auto;
+    width: 60%;
+    height: 50px;
+    background-color: #101010;
+    font-size: 20px;
+    color: white;
+    border: none;
+    transition: all 500ms;
+    cursor: pointer;
+}
+
+.btn-click:hover {
+    background-color: #202020;
+}
+
+/*Estilos login*/
+#user-form {
+    width: 50%;
+    margin: 0px auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#links-login {
+    display: flex;
+    margin-top: 25px;
+}
+
+#links-login h5 {
+    flex-grow: 1;
+    text-align: center;
+}
+
+#links-login h5 a {
+    font-size: 18px;
+    color: white;
+    font-weight: 300;
+    text-decoration: none;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 30px;
+}
+
+#form-projects,
+#list-projects {
+    background-color: black;
+    padding: 20px;
+}
+
+#search-form {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10px;
+}
+
+#search-form input {
+    width: 70%;
+}
+
+#search-form button {
+    width: 25%;
+    height: 48px;
+}
+
+table {
+    width: 100%;
+    background-color: black;
+    border-collapse: collapse;
+    border: 1px solid white;
+    font-size: 20px;
+}
+
+table th,
+table tr,
+table td {
+    border: 3px solid white;
+    padding: 10px;
+}
+
+.accion-col {
+    display: flex;
+    flex-direction: column;
+    border: none;
+}
+
+.button {
+    padding: 5px 10px;
+    margin-top: 10px;
+    font-size: 20px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.green {
+    background-color: rgb(20, 92, 28)
+}
+
+.blue {
+    background-color: rgb(3, 3, 130);
+}
+
+.red {
+    background-color: rgb(193, 9, 9);
+}
+
+.skyblue {
+    background-color: rgb(37, 102, 140)
+}
+
+.error h2 {
+    font-size: 100px;
+}
+
+.error h2 span {
+    display: block;
+}
+
+.error a {
+    font-size: 20px;
+    color: white;
+}
+
+footer {
+    width: 100%;
+    height: 50px;
+    padding: 20px 0px;
+}
+
+footer p {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+@media (max-width: 920px) {
+
+    label,
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"],
+    input[type="file"],
+    select,
+    textarea {
+        width: 100%;
+    }
+
+    #user-form {
+        width: 60%;
+    }
+}
+
+@media (max-width: 768px) {
+    #logo {
+        flex-basis: 90%;
+    }
+
+    .checkbtn {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        width: 100%;
+        height: 100vh;
+        margin-top: -1px;
+        padding-top: 0px;
+        top: 70px;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        width: 100%;
+        padding: 0px;
+        line-height: 60px;
+        text-align: center;
+    }
+
+    #check:checked~nav {
+        display: block;
+        position: fixed;
+        animation: aparecer 1s forwards;
+    }
+
+    #items ul {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        gap: 10px;
+    }
+
+    #user-form {
+        width: 70%;
+    }
+}
+
+@media (max-width: 650px) {
+    #user-form {
+        width: 90%;
+    }
+}
+
+@media (max-width: 500px) {
+
+    #logo a {
+        margin-left: 30px;
+    }
+
+    .container {
+        padding: 30px;
+    }
+
+    h1,
+    h2 {
+        font-size: 36px;
+    }
+
+    p {
+        font-size: 20px;
+    }
+
+    #items ul li {
+        font-size: 24px;
+    }
+
+    label,
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="tel"],
+    input[type="file"],
+    select,
+    textarea {
+        width: 90%;
+    }
+
+    .form{
+        padding: 30px 20px;
+    }
+
+    #user-form {
+        width: 95%;
+    }
+
+    #links-login {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 360px) {
+
+    h1,
+    h2 {
+        font-size: 28px;
+    }
+
+}

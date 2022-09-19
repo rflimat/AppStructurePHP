@@ -1,0 +1,7 @@
+{
+    "require": {
+        "easy-projects/simple-router": "^7.2",
+        "twig/twig": "^3.4",
+        "vlucas/phpdotenv": "^5.4"
+    }
+}

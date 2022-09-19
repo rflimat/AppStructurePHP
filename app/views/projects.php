@@ -1,0 +1,64 @@
+{% extends "layout.php" %}
+
+{% block title %}Index{% endblock %}
+
+{% block content %}
+<h2>Proyectos</h2>
+<div class="layout">
+    <section id="form-projects">
+        <div class="form">
+            <form action="{{appUrl}}/proyectos/insert" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="token" value="{{sessionToken}}">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <label for="imagen">Imagen</label>
+                <input type="file" id="imagen" name="imagen" required>
+                <label for="descripcion">Descripcion</label>
+                <textarea id="descripcion" name="descripcion" required></textarea>
+                <input type="submit" class="btn-click green" value="Guardar proyecto">
+            </form>
+        </div>
+    </section>
+    <section id="list-projects">
+        <div id="search-form">
+            <form action="{{appUrl}}/proyectos/search" method="get">
+                <input type="hidden" name="token" value="{{sessionToken}}">
+                <input type="text" name="nombre" id="nombre" value="" placeholder="Ingrese nombre de proyecto">
+                <button class="button skyblue" type="submit">Buscar</button>
+            </form>
+        </div>
+        <table class="table">
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+                <th>Imagen</th>
+                <th>Accion</th>
+            </tr>
+            {% for proyecto in proyectos %}
+            <tr>
+                <td>{{proyecto.id}}</td>
+                <td>{{proyecto.nombre}}</td>
+                <td>{{proyecto.descripcion}}</td>
+                <td>
+                    <img src="{{appUrl}}/../app/storage/projects/{{proyecto.imagen}}" alt="">
+                </td>
+                <td class="accion-col">
+                    <form action="{{appUrl}}/proyectos/edit" method="get">
+                        <input type="hidden" name="token" value="{{sessionToken}}">
+                        <input type="hidden" name='id' value="{{proyecto.id}}">
+                        <button class="button blue">Actualizar</button>
+                    </form>
+                    <form action="{{appUrl}}/proyectos/delete/{{proyecto.id}}" method="post">
+                        <input type="hidden" name="token" value="{{sessionToken}}">
+                        <input type="hidden" name='id' value="{{proyecto.id}}">
+                        <input type="hidden" name='_METHOD' value="DELETE">
+                        <button class="button red">Eliminar</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </section>
+</div>
+{% endblock %}

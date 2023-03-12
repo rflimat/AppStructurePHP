@@ -9,7 +9,6 @@
     require_once "config/view.php";
 
     require_once "database/conexion.php";
-    require_once "routes/web.php";
-    require_once "routes/api.php";
+    require_once "routes/index.php";
     
 ?>

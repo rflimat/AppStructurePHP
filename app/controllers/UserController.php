@@ -5,29 +5,30 @@ class UserController
 {
     public function signup($req)
     {
-        $nombre = $req['name'];
-        $email = $req['email'];
-        $user = $req['user'];
-        $password = hash('SHA256', $req['password']);
-        $token_password = bin2hex(openssl_random_pseudo_bytes(16));
+        $user = new User();
+        $user->name = $req['name'];
+        $user->email = $req['email'];
+        $user->user = $req['user'];
+        $user->password = hash('SHA256', $req['password']);
+        $user->token = bin2hex(openssl_random_pseudo_bytes(16));
+        $user->save();
 
-        $objUser = new User();
-        $objUser->setUser($nombre, $email, $user, $password, $token_password);
         redirect('/login');
     }
     public function login($req)
     {
         $user = $req['user'];
         $password = hash('SHA256', $req['password']);
+        echo $password;
 
         $objUser = new User();
         $result = $objUser->validateUser($user, $password);
 
         if ($result) {
             setSession($user);
-            redirect('/proyectos');
+            redirect('/projects');
         } else {
-            redirect('/login');
+            redirect('/projects');
         }
     }
     public function validateEmail($req)
@@ -69,7 +70,7 @@ class UserController
         $result = $objUser->validateToken($id, $token);
 
         if ($result) {
-            view("resetpassword.php", ['id' => $id]);
+            view("resetpassword", ['id' => $id]);
         } else {
             echo "<script>alert('Datos no validos')</script>";
         }

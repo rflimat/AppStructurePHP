@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %} - AppStructurePHP</title>
-    <link rel="stylesheet" href="{{appUrl}}/../app/assets/css/styles.css">
-    <link rel="stylesheet" href="{{appUrl}}/../app/assets/fonts/fontawesome-free-6.1.1-web/all.min.css">
+    <link rel="stylesheet" href="{{appUrl}}/assets/css/styles.css">
+    <link rel="stylesheet" href="{{appUrl}}/assets/fonts/fontawesome-free-6.1.1-web/all.min.css">
 </head>
 <body>
     <header>
@@ -23,10 +23,10 @@
                     <a href="{{appUrl}}">Home</a>
                 </li>
                 <li>
-                    <a href="{{appUrl}}/proyectos">Proyecto</a>
+                    <a href="{{appUrl}}/projects">Proyecto</a>
                 </li>
                 <li>
-                    <a href="{{appUrl}}/api/proyectos">API</a>
+                    <a href="{{appUrl}}/api/projects">API</a>
                 </li>
                 <li>
                     <a href="https://github.com/rflimat/" target="_blank">Github</a>
@@ -51,6 +51,6 @@
         <p>Todos los derechos reservados</p>
     </footer>
 
-    <script src="{{appUrl}}/../app/assets/js/script.js"></script>
+    <script src="{{appUrl}}/assets/js/script.js"></script>
 </body>
 </html>

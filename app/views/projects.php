@@ -1,13 +1,13 @@
 {% extends "layout.php" %}
 
-{% block title %}Index{% endblock %}
+{% block title %}Proyectos{% endblock %}
 
 {% block content %}
 <h2>Proyectos</h2>
 <div class="layout">
     <section id="form-projects">
         <div class="form">
-            <form action="{{appUrl}}/proyectos/insert" method="post" enctype="multipart/form-data">
+            <form action="{{appUrl}}/projects/insert" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="token" value="{{sessionToken}}">
                 <label for="nombre">Nombre</label>
                 <input type="text" id="nombre" name="nombre" required>
@@ -21,7 +21,7 @@
     </section>
     <section id="list-projects">
         <div id="search-form">
-            <form action="{{appUrl}}/proyectos/search" method="get">
+            <form action="{{appUrl}}/projects/search" method="get">
                 <input type="hidden" name="token" value="{{sessionToken}}">
                 <input type="text" name="nombre" id="nombre" value="" placeholder="Ingrese nombre de proyecto">
                 <button class="button skyblue" type="submit">Buscar</button>
@@ -35,23 +35,23 @@
                 <th>Imagen</th>
                 <th>Accion</th>
             </tr>
-            {% for proyecto in proyectos %}
+            {% for project in projects %}
             <tr>
-                <td>{{proyecto.id}}</td>
-                <td>{{proyecto.nombre}}</td>
-                <td>{{proyecto.descripcion}}</td>
+                <td>{{project.id}}</td>
+                <td>{{project.name}}</td>
+                <td>{{project.description}}</td>
                 <td>
-                    <img src="{{appUrl}}/../app/storage/projects/{{proyecto.imagen}}" alt="">
+                    <img src="{{appUrl}}/../app/storage/projects/{{project.image}}" alt="">
                 </td>
                 <td class="accion-col">
-                    <form action="{{appUrl}}/proyectos/edit" method="get">
+                    <form action="{{appUrl}}/projects/edit" method="get">
                         <input type="hidden" name="token" value="{{sessionToken}}">
-                        <input type="hidden" name='id' value="{{proyecto.id}}">
+                        <input type="hidden" name='id' value="{{project.id}}">
                         <button class="button blue">Actualizar</button>
                     </form>
-                    <form action="{{appUrl}}/proyectos/delete/{{proyecto.id}}" method="post">
+                    <form action="{{appUrl}}/projects/delete/{{project.id}}" method="post">
                         <input type="hidden" name="token" value="{{sessionToken}}">
-                        <input type="hidden" name='id' value="{{proyecto.id}}">
+                        <input type="hidden" name='id' value="{{project.id}}">
                         <input type="hidden" name='_METHOD' value="DELETE">
                         <button class="button red">Eliminar</button>
                     </form>
